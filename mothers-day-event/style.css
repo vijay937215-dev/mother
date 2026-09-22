@@ -1,0 +1,132 @@
+/* Custom Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes successBounce {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.success-bounce {
+    animation: successBounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Floating Shapes Background */
+@keyframes floatShape1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 30px) scale(1.05); }
+}
+@keyframes floatShape2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.05); }
+}
+
+.floating-shape-1 { animation: floatShape1 15s ease-in-out infinite; transition: transform 0.3s ease-out; }
+.floating-shape-2 { animation: floatShape2 18s ease-in-out infinite; transition: transform 0.3s ease-out; }
+
+/* Intro Screen Animations */
+@keyframes cinematicText {
+    0% { opacity: 0; transform: scale(1.1) translateY(20px); letter-spacing: 0px; filter: blur(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); letter-spacing: 4px; filter: blur(0px); }
+}
+
+@keyframes logoReveal {
+    0% { opacity: 0; transform: translateY(-50px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes subReveal {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.cinematic-text {
+    animation: cinematicText 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.logo-reveal {
+    animation: logoReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.sub-reveal {
+    opacity: 0;
+    animation: subReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 1.5s;
+}
+.intro-msg-reveal {
+    opacity: 0;
+    animation: subReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 2s;
+}
+.btn-reveal {
+    opacity: 0;
+    animation: subReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 2.5s;
+}
+
+/* Intro Petals */
+.intro-petal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #f48fb1;
+    border-radius: 50% 0 50% 50%;
+    opacity: 0.3;
+    filter: blur(2px);
+    animation: fallingPetal linear infinite;
+}
+
+.petal-1 { left: 20%; animation-duration: 12s; animation-delay: 0s; transform: rotate(45deg) scale(1.5); }
+.petal-2 { left: 60%; animation-duration: 15s; animation-delay: 3s; transform: rotate(15deg) scale(1); }
+.petal-3 { left: 80%; animation-duration: 10s; animation-delay: 1s; transform: rotate(85deg) scale(2); background-color: #ce93d8; }
+.petal-4 { left: 30%; animation-duration: 14s; animation-delay: 5s; transform: rotate(120deg) scale(1.2); }
+
+@keyframes fallingPetal {
+    0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.5; }
+    80% { opacity: 0.5; }
+    100% { top: 110%; transform: translateX(100px) rotate(360deg); opacity: 0; }
+}
+
+/* Particle styling */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(244,143,177,0.5) 50%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Swiper Pagination Styling */
+.swiper-pagination-bullet {
+    background-color: #ce93d8 !important;
+    opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+    background-color: #4a148c !important;
+    opacity: 1;
+}
+
+/* 3D Card Styling */
+.card-3d {
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+}
+.card-content {
+    transform: translateZ(30px);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #fdf2f8; }
+::-webkit-scrollbar-thumb { background: #ce93d8; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #b39ddb; }
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; }

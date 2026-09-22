@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returning Mothers Day Celebration | IEEE SB JEC</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#b39ddb',
+                        secondary: '#f48fb1',
+                        accent: '#ce93d8',
+                        dark: '#4a148c',
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body bg-gradient-to-br from-[#f3e5f5] via-white to-[#fce4ec] text-gray-800 antialiased overflow-x-hidden relative min-h-screen">
+
+    <!-- Global Background Elements (Persists across Intro and Main) -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-5">
+        <!-- Abstract women silhouette parallax -->
+        <svg viewBox="0 0 800 600" class="absolute top-20 right-[-10%] w-1/2 h-auto floating-shape-1 parallax-bg">
+             <path fill="#4a148c" d="M300,50 C400,100 450,200 400,300 C350,400 200,450 150,350 C100,250 200,0 300,50 Z" />
+        </svg>
+        <svg viewBox="0 0 800 600" class="absolute bottom-[-10%] left-[-10%] w-1/2 h-auto floating-shape-2 parallax-bg">
+             <path fill="#f48fb1" d="M150,100 C300,50 400,150 350,250 C300,350 100,400 50,250 C0,100 50,150 150,100 Z" />
+        </svg>
+    </div>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="fixed inset-0 z-[100] bg-gradient-to-br from-[#f8ebf9] via-white to-[#fae1eb] flex flex-col items-center justify-center overflow-hidden transition-all duration-1000">
+        
+        <!-- Intro Decorative Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="intro-petal petal-1"></div>
+            <div class="intro-petal petal-2"></div>
+            <div class="intro-petal petal-3"></div>
+            <div class="intro-petal petal-4"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+            <!-- Logos Animation -->
+            <div class="flex items-center gap-8 mb-12 logo-reveal">
+                <img src="college-logo.png" alt="JEC Logo" class="h-24 md:h-32 w-auto object-contain drop-shadow-xl" onerror="this.src='https://via.placeholder.com/200x80?text=JEC+Logo'">
+                <div class="h-16 w-px bg-gray-300"></div>
+                <img src="ieee-logo.png" alt="IEEE Logo" class="h-20 md:h-28 w-auto object-contain drop-shadow-xl" onerror="this.src='https://via.placeholder.com/150x60?text=IEEE+Logo'">
+            </div>
+
+            <!-- Title Animation -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-dark via-primary to-secondary mb-4 cinematic-text tracking-wide drop-shadow-sm pb-2">
+                RETURNING MOTHERS DAY<br/>CELEBRATION
+            </h1>
+            
+            <h2 class="text-xl md:text-2xl font-heading italic text-dark/80 mb-6 sub-reveal tracking-widest uppercase">
+                Strength <span class="text-secondary mx-2">•</span> Resilience <span class="text-secondary mx-2">•</span> Voice
+                <br/><span class="text-lg md:text-xl font-light mt-2 block lowercase capitalize">The Woman’s Perspective</span>
+            </h2>
+            
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12 text-lg intro-msg-reveal leading-relaxed">
+                "A celebration of women, motherhood, resilience and the remarkable stories that inspire us."
+            </p>
+
+            <!-- Explore Button -->
+            <button id="exploreBtn" class="group relative px-8 py-4 bg-white/50 backdrop-blur-md border border-white rounded-full shadow-[0_10px_40px_rgba(244,143,177,0.3)] hover:shadow-[0_15px_50px_rgba(244,143,177,0.5)] transition-all duration-500 overflow-hidden btn-reveal">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                <span class="relative z-10 flex items-center gap-3 font-semibold tracking-wider text-dark group-hover:text-primary transition-colors">
+                    EXPLORE EVENT 
+                    <i class="fa-solid fa-arrow-down animate-bounce group-hover:text-secondary"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden Initially) -->
+    <main id="main-content" class="opacity-0 hidden transition-opacity duration-1000 ease-in">
+        
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 transition-all duration-300 py-3" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center bg-white/70 backdrop-blur-md rounded-full px-6 py-2 shadow-sm border border-white/40">
+                    <div class="flex items-center gap-4">
+                        <img src="college-logo.png" alt="JEC Logo" class="h-10 w-auto object-contain" onerror="this.src='https://via.placeholder.com/100x40?text=JEC+Logo'">
+                        <img src="ieee-logo.png" alt="IEEE Logo" class="h-8 w-auto object-contain" onerror="this.src='https://via.placeholder.com/80x30?text=IEEE+Logo'">
+                    </div>
+                    <div class="hidden md:flex flex-col items-center">
+                        <span class="font-heading font-bold text-dark text-lg leading-none">IEEE SB JEC</span>
+                        <span class="text-[10px] text-secondary tracking-widest uppercase">Code: 64691</span>
+                    </div>
+                    <div>
+                        <a href="#register" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 inline-block">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Hero / Event Title -->
+        <section class="pt-36 pb-8 px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-dark via-primary to-secondary mb-4 drop-shadow-sm" data-aos="fade-down">
+                Returning Mothers Day Celebration
+            </h1>
+            <h2 class="text-xl md:text-2xl font-heading italic text-gray-700 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                "Strength, Resilience, Voice – The Woman’s Perspective"
+            </h2>
+        </section>
+
+        <!-- Timeline Info Banner -->
+        <div class="pt-4 pb-8 px-4" id="info-banner">
+            <div class="max-w-5xl mx-auto bg-white/60 backdrop-blur-xl border border-white rounded-3xl p-6 shadow-xl flex flex-wrap justify-center gap-8 md:gap-16 items-center transform hover:scale-[1.01] transition-transform duration-500">
+                <div class="flex items-center gap-4 text-dark" data-aos="fade-right">
+                    <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Date</p>
+                        <p class="font-bold text-lg">24 Sept 2026</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-dark" data-aos="fade-up">
+                    <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary text-xl">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Time</p>
+                        <p class="font-bold text-lg">10:15 AM - 12:45 PM</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-dark" data-aos="fade-left">
+                    <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Venue</p>
+                        <p class="font-bold text-lg">ECE Seminar Hall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Carousel Section -->
+        <section class="py-16 bg-transparent z-10 relative overflow-hidden" id="events">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-5xl font-heading font-bold text-dark mb-4">Event Highlights</h2>
+                    <div class="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="swiper eventSwiper pb-16" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        <!-- Event 1 -->
+                        <div class="swiper-slide p-4">
+                            <div class="card-3d bg-white/90 backdrop-blur-xl rounded-[2.5rem] p-10 shadow-[0_20px_40px_rgba(0,0,0,0.05)] border border-purple-100 h-full">
+                                <div class="card-content">
+                                    <div class="flex justify-between items-start mb-8">
+                                        <div class="text-6xl text-primary/20 font-heading font-bold italic leading-none">01</div>
+                                        <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary text-2xl">
+                                            <i class="fa-solid fa-masks-theater"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-3xl font-heading font-bold text-dark mb-2">Women’s Perspective</h3>
+                                    <p class="text-primary font-semibold mb-6 uppercase tracking-wider text-sm">Skit Performance</p>
+                                    <p class="text-gray-600 leading-relaxed text-lg">
+                                        Experience powerful narratives and unique viewpoints through compelling skit performances. A dedicated stage highlighting the stories, struggles, and triumphs of women.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event 2 -->
+                        <div class="swiper-slide p-4">
+                            <div class="card-3d bg-white/90 backdrop-blur-xl rounded-[2.5rem] p-10 shadow-[0_20px_40px_rgba(0,0,0,0.05)] border border-pink-100 h-full">
+                                <div class="card-content">
+                                    <div class="flex justify-between items-start mb-8">
+                                        <div class="text-6xl text-secondary/20 font-heading font-bold italic leading-none">02</div>
+                                        <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary text-2xl">
+                                            <i class="fa-solid fa-magnifying-glass-location"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-3xl font-heading font-bold text-dark mb-2">Her Quest: Women</h3>
+                                    <p class="text-secondary font-semibold mb-6 uppercase tracking-wider text-sm">Interactive Treasure Hunt</p>
+                                    <ul class="text-gray-600 leading-relaxed space-y-3 list-none text-base">
+                                        <li class="flex items-start"><i class="fa-solid fa-check text-secondary mt-1 mr-3"></i> Teams of 2–4 members.</li>
+                                        <li class="flex items-start"><i class="fa-solid fa-check text-secondary mt-1 mr-3"></i> Find hidden clues placed around the venue.</li>
+                                        <li class="flex items-start"><i class="fa-solid fa-check text-secondary mt-1 mr-3"></i> Clues reveal profession, education, achievements, and contributions of famous female professionals.</li>
+                                        <li class="flex items-start"><i class="fa-solid fa-check text-secondary mt-1 mr-3"></i> Connect the clues and identify the woman.</li>
+                                        <li class="flex items-start"><i class="fa-solid fa-trophy text-primary mt-1 mr-3"></i> First teams to correctly identify her win!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section class="py-16 relative z-10" id="register">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/95 backdrop-blur-2xl rounded-[3rem] p-8 md:p-14 shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-white relative overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+                    
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl font-heading font-bold text-dark mb-4">Common Registration</h2>
+                        <p class="text-gray-500 text-lg">Register once to participate in both events.</p>
+                    </div>
+
+                    <form id="registrationForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700 ml-1">Full Name *</label>
+                                <input type="text" id="name" required class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-gray-800">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700 ml-1">Phone Number *</label>
+                                <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="10-digit number" class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-gray-800">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700 ml-1">Email ID *</label>
+                                <input type="email" id="email" required class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-gray-800">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700 ml-1">Year *</label>
+                                <select id="year" required class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-gray-800 appearance-none cursor-pointer">
+                                    <option value="" disabled selected>Select Year</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pb-6">
+                            <label class="block text-sm font-medium text-gray-700 ml-1">Department *</label>
+                            <input type="text" id="department" required placeholder="e.g., Computer Science" class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-gray-800">
+                        </div>
+
+                        <div id="errorMsg" class="hidden bg-red-50 text-red-600 px-4 py-3 rounded-xl text-sm text-center font-medium border border-red-100"></div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-primary to-secondary text-white py-5 rounded-2xl font-bold text-lg shadow-[0_10px_30px_rgba(244,143,177,0.4)] hover:shadow-[0_15px_40px_rgba(244,143,177,0.6)] hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-3">
+                            <span>Confirm Registration</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success State -->
+                    <div id="successState" class="hidden absolute inset-0 bg-white/95 backdrop-blur-3xl z-20 flex flex-col items-center justify-center p-8 text-center rounded-[3rem]">
+                        <div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center mb-8 success-bounce border-4 border-green-100 shadow-[0_0_50px_rgba(74,222,128,0.3)]">
+                            <i class="fa-solid fa-check text-6xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-4xl font-heading font-bold text-dark mb-4 tracking-wide">REGISTRATION SUCCESSFUL!</h3>
+                        <p class="text-gray-600 mb-10 text-lg max-w-md leading-relaxed">Welcome to the Returning Mothers Day Celebration.</p>
+                        <a href="https://chat.whatsapp.com/EiHvowXIb0X9cAe05hU9TB" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-10 py-5 rounded-full font-bold shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_40px_rgba(37,211,102,0.5)] hover:-translate-y-2 transition-all duration-300 flex items-center gap-3 text-lg group">
+                            <i class="fa-brands fa-whatsapp text-3xl group-hover:scale-110 transition-transform"></i>
+                            <span>Join WhatsApp Group</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-white/90 backdrop-blur-xl border-t border-purple-50 pt-16 pb-8 z-10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-heading font-bold text-dark mb-2">IEEE SB JEC</h4>
+                        <p class="text-gray-500 text-sm">Student Branch Code: 64691</p>
+                        <p class="text-gray-500 text-sm mt-1">Jeppiaar Engineering College (Autonomous)</p>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"><i class="fa-solid fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div class="text-center text-gray-400 text-sm border-t border-gray-100 pt-8">
+                    &copy; 2026 IEEE Student Branch Jeppiaar Engineering College. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Intro Screen Logic
+        document.getElementById('exploreBtn').addEventListener('click', () => {
+            const intro = document.getElementById('intro-screen');
+            const main = document.getElementById('main-content');
+            
+            // Fade out intro
+            intro.style.opacity = '0';
+            
+            setTimeout(() => {
+                intro.style.display = 'none';
+                main.classList.remove('hidden');
+                
+                // Slight delay before fading in main to ensure display:block applies
+                setTimeout(() => {
+                    main.style.opacity = '1';
+                    
+                    // Initialize AOS after main content is visible
+                    AOS.init({
+                        duration: 1000,
+                        once: true,
+                        offset: 50
+                    });
+
+                    // Initialize Swiper
+                    new Swiper('.eventSwiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 40,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            768: {
+                                slidesPerView: 2,
+                            }
+                        },
+                        grabCursor: true
+                    });
+                }, 50);
+            }, 1000); // Wait for transition duration
+        });
+
+        // 3D Card Hover Effect
+        document.querySelectorAll('.card-3d').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const xPct = x / rect.width - 0.5;
+                const yPct = y / rect.height - 0.5;
+                
+                // Tilt card
+                card.style.transform = `perspective(1000px) rotateY(${xPct * 10}deg) rotateX(${-yPct * 10}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+            });
+        });
+
+        // Simple parallax for floating shapes based on mouse move (only in main screen)
+        document.addEventListener('mousemove', e => {
+            const shapes = document.querySelectorAll('.parallax-bg');
+            const x = (e.clientX / window.innerWidth - 0.5) * 40;
+            const y = (e.clientY / window.innerHeight - 0.5) * 40;
+            
+            shapes.forEach(shape => {
+                const speed = shape.classList.contains('floating-shape-1') ? 1 : -1;
+                shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+
+    <!-- App Logic -->
+    <script type="module" src="app.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
